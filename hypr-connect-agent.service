@@ -1,0 +1,20 @@
+[Unit]
+Description=Hypr Connect local file and power agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/hypr-connect-agent
+Restart=on-failure
+RestartSec=3
+Environment=MRP_BIND=0.0.0.0:8765
+EnvironmentFile=-%h/.config/hypr-connect-agent.env
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths="%h/Documents/Hypr Connect Files"
+
+[Install]
+WantedBy=default.target

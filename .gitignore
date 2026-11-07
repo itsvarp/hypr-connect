@@ -1,0 +1,12 @@
+/target
+/mrp-agent.env
+/agent.log
+/agent-error.log
+/windows-install.log
+/pairing.png
+/wol-test.*
+/verify-*
+/test-*
+/.idea/
+/.vscode/
+*.tmp
